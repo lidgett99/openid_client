@@ -55,13 +55,13 @@ class Authenticator {
             print('server started $port');
             await for (var request in requestServer) {
               print('request $request');
-              request.response.statusCode = 200;
-              request.response.headers.set('Content-type', 'text/html');
-              request.response.writeln('<html>'
-                  '<h1>You can now close this window</h1>'
-                  '<script>window.close();</script>'
-                  '</html>');
-              await request.response.close();
+              // request.response.statusCode = 200;
+              // request.response.headers.set('Content-type', 'text/html');
+              // request.response.writeln('<html>'
+              //     '<h1>You can now close this window</h1>'
+              //     '<script>window.close();</script>'
+              //     '</html>');
+              // await request.response.close();
               var result = request.requestedUri.queryParameters;
 
               if (!result.containsKey('state')) continue;
